@@ -199,6 +199,20 @@ public class Content implements Serializable {
 		this.rating = rating;
 		this.category = category;
 	}
+	public Content(Integer id, String title, Genre genre, String description, String trailer, int yearReleased,
+			Double rating, Category category) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.genre = genre;
+		this.description = description;
+		this.trailer = trailer;
+		this.yearReleased = yearReleased;
+		this.rating = rating;
+		this.category = category;
+	}
+	
+	
 	
 	
 	

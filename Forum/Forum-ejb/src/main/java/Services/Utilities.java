@@ -196,10 +196,35 @@ public class Utilities {
 		Content content4 = new Content("Minions",Genre.ADVENTURE,"KIDS","Metacritics",2013, 9.0,
 				Category.MOVIES);
 		
+		Content content5 = new Content("HER",Genre.ROMANCE,"OS coming to life","www.youtube.com/HER",2012, 8.0,
+				Category.MOVIES);
+		
+		Content content6 = new Content("Shadow Of Mordor",Genre.ADVENTURE,"Lord Of The Rings","www.youtube.com/Lord Of The Rings",2003, 9.5,
+				Category.GAMES);
+		
+		Content content7 = new Content("Guns And Roses",Genre.DRAMA,"Lord Of The Rings","https://www.youtube.com/watch?v=8SbUC-UaAxE",1992, 2.0,
+				Category.MUSIC);
+		
+		Content content8 = new Content("My Happy Ending",Genre.DRAMA,"Avril Lavigne","https://www.youtube.com/watch?v=afefae",1999, 8.0,
+				Category.MUSIC);
+		Content content9= new Content("Big Bang Theory",Genre.COMEDY,"Sitcom","https://www.youtube.com/watch?v=aggdsdsae",2010, 8.0,
+				Category.TV);
+		Content content10= new Content("Vikings",Genre.ACTION,"Scandinavian History","https://www.youtube.com/watch?v=a4455zae",2015, 8.5,
+				Category.TV);
+		Content content11= new Content("Game Of Thrones",Genre.ADVENTURE,"7 Kingdoms","https://www.youtube.com/watch?v=a4455zae",2011, 9.5,
+				Category.TV);
+		
 		entityManager.persist(content1);
 		entityManager.persist(content2);
 		entityManager.persist(content3);
 		entityManager.persist(content4);
+		entityManager.persist(content5);
+		entityManager.persist(content6);
+		entityManager.persist(content7);
+		entityManager.persist(content8);
+		entityManager.persist(content9);
+		entityManager.persist(content10);
+		entityManager.persist(content11);
 	
 	}
 	

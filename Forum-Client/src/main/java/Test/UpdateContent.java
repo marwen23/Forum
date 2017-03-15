@@ -14,7 +14,7 @@ public class UpdateContent {
 	public static void main(String[] args)  {
 		
 		Content contentFound = ContentServicesDelegate.findContentById(2);
-		contentFound.setTitle("the ring");
+		contentFound.setTitle("the booooooooooo");
 		
 		contentFound.setTrailer("www.youtube.com");
 		
