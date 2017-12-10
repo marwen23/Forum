@@ -28,7 +28,7 @@ public class User implements Serializable {
 	private Date dateOfBirth;
 	private String role;
 	private boolean enabled;
-	private String responsibleOf;
+	private ResponsibilityOf responsibleOf;
 	
 	@OneToMany(mappedBy="userSender")
 	private List<Message> messagesSent;
@@ -148,11 +148,13 @@ public class User implements Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	
+	
 	}
-	public String getResponsibleOf() {
+	public ResponsibilityOf getResponsibleOf() {
 		return responsibleOf;
 	}
-	public void setResponsibleOf(String responsibleOf) {
+	public void setResponsibleOf(ResponsibilityOf responsibleOf) {
 		this.responsibleOf = responsibleOf;
 	}
    

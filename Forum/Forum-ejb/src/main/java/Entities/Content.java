@@ -29,6 +29,7 @@ public class Content implements Serializable {
 	private int yearReleased;
 	private Double rating;
 	private Category category;
+	private String image;
 	@OneToMany(mappedBy="content")
 	private List<FC> fcs;
 	
@@ -43,22 +44,14 @@ public class Content implements Serializable {
 	@OneToMany(mappedBy="content")
 	private List<Award>awards;
 	@ManyToOne
-	private Admin admin;
+	private User user;
 	
-	@OneToOne
-	private Moderator moderator;
 	
-	public Admin getAdmin() {
-		return admin;
+	public User getUser() {
+		return user;
 	}
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
-	}
-	public Moderator getModerator() {
-		return moderator;
-	}
-	public void setModerator(Moderator moderator) {
-		this.moderator = moderator;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public List<FC> getFcs() {
 		return fcs;
@@ -210,6 +203,37 @@ public class Content implements Serializable {
 		this.yearReleased = yearReleased;
 		this.rating = rating;
 		this.category = category;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public Content(Integer id, String title, Genre genre, String description, String trailer, int yearReleased,
+			Double rating, Category category, String image) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.genre = genre;
+		this.description = description;
+		this.trailer = trailer;
+		this.yearReleased = yearReleased;
+		this.rating = rating;
+		this.category = category;
+		this.image = image;
+	}
+	public Content(String title, Genre genre, String description, String trailer, int yearReleased, Double rating,
+			Category category, String image) {
+		super();
+		this.title = title;
+		this.genre = genre;
+		this.description = description;
+		this.trailer = trailer;
+		this.yearReleased = yearReleased;
+		this.rating = rating;
+		this.category = category;
+		this.image = image;
 	}
 	
 	

@@ -2,7 +2,6 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="Forum-ejb">
 		<jta-data-source>java:jboss/datasources/FORUM</jta-data-source>
-		<class>Entities.Admin</class>
 		<class>Entities.Award</class>
 		<class>Entities.AwardId</class>
 		<class>Entities.Cast</class>
@@ -14,10 +13,11 @@
 		<class>Entities.Favorites</class>
 		<class>Entities.Message</class>
 		<class>Entities.MessageId</class>
-		<class>Entities.Moderator</class>
 		<class>Entities.Rating</class>
 		<class>Entities.RatingId</class>
 		<class>Entities.User</class>
+	
+		
 	
 		
 	

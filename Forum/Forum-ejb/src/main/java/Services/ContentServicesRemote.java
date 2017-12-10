@@ -16,7 +16,8 @@ public interface ContentServicesRemote {
 	
 	void addContent(String title, Genre genre, String description, String trailer, int yearReleased,Double rating, Category category);
 
-	
+	void addContentWeb(Content content);
+
 
 	Content findContentById(Integer id);
 	

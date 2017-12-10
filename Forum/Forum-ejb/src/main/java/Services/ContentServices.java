@@ -37,6 +37,12 @@ public class ContentServices implements ContentServicesRemote, ContentServicesLo
 		Content content = new Content(title, genre, description, trailer, yearReleased,rating, category);
 		entityManager.persist(content);
 	}
+	
+	@Override
+	public void addContentWeb(Content content) {
+		// TODO Auto-generated method stub
+		entityManager.persist(content);
+	}
 
 	@Override
 	public Content findContentById(Integer id) {
@@ -85,6 +91,15 @@ public class ContentServices implements ContentServicesRemote, ContentServicesLo
 
 		// query.setParameter("cat", category);
 		// return query;
+
+	}
+	
+	@Override
+	public List<Content> searchContent(String keyword) {
+		Query query = entityManager.createQuery("select c from Content c where c.title LIKE :key");
+		query.setParameter("key", '%' + keyword + '%');
+		
+		return query.getResultList();
 
 	}
 

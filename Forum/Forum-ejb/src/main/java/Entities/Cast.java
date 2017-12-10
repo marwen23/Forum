@@ -30,15 +30,10 @@ public class Cast implements Serializable {
 	private List<Award> awards;
 	
 
-	public Admin getAdmin() {
-		return admin;
-	}
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
-	}
+	
 
 	@ManyToOne
-	private Admin admin;
+	private User user;
 	private static final long serialVersionUID = 1L;
 
 	public List<Award> getAwards() {
@@ -91,6 +86,12 @@ public class Cast implements Serializable {
 
 	public void setBiography(String biography) {
 		this.biography = biography;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
    
 }
