@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"      
+      xmlns:f="http:/xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http:/xmlns.jcp.org/jsf"
+      xmlns:pt="http:/xmlns.jcp.org/jsf/passthrought"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+      <section id="content">
+            <div class="content-wrap bgcolor-black notoppadding nobottompadding">
+               	<div class="section nobottommargin notopmargin bottompadding-lg bgcolor-grey-dark dark">                                                          
+              		<div class="container toppadding-sm center">
+  
+                    	<div class="blockquote">
+                            <h2>We purchased our first home through Vine realtors and we weren't disappointed. Great rates, quick Escrow</h2>
+                            <span>Sarah Smith - Irvine, CA</span>
+                        </div>
+                                            
+              		</div>                   
+  	  	  	  	</div>
+
+            
+            	<div class="section nomargin nopadding bgcolor-black">                                                          
+              		<div class="container nomargin nopadding">
+
+                    <!-- Portfolio Items
+                    ============================================= -->
+                    <div id="portfolio" class="portfolio-3 portfolio-nomargin portfolio-full clearfix dark">
+
+                        <article class="portfolio-item">
+                            <div class="portfolio-image">
+<!--                                 <img src="images/site-images/2-dark.jpg" alt=""> -->
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-desc heading-block center">
+                                        <h3 class="serif">$2,800 / Month</h3>
+										<span class="serif">2 Bed, 2 Bath, 2,000 sq ft</span>
+										<p class="serif">Irvine, CA</p>
+										<p class="serif"><a href="#" class="button button-small">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-item">
+                            <div class="portfolio-image">
+<!--                                 <img src="images/site-images/16.jpg" alt=""> -->
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-desc heading-block center">
+                                        <h3 class="serif">$2,800 / Month</h3>
+										<span class="serif">2 Bed, 2 Bath, 2,000 sq ft</span>
+										<p class="serif">Irvine, CA</p>
+										<p class="serif"><a href="#" class="button button-small">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-item">
+                            <div class="portfolio-image">
+<!--                                 <img src="images/site-images/34.jpg" alt=""> -->
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-desc heading-block center">
+                                        <h3 class="serif">$2,800 / Month</h3>
+										<span class="serif">2 Bed, 2 Bath, 2,000 sq ft</span>
+										<p class="serif">Irvine, CA</p>
+										<p class="serif"><a href="#" class="button button-small">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-item">
+                            <div class="portfolio-image">
+<!--                                 <img src="images/site-images/18.jpg" alt=""> -->
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-desc heading-block center">
+                                        <h3 class="serif">$2,800 / Month</h3>
+										<span class="serif">2 Bed, 2 Bath, 2,000 sq ft</span>
+										<p class="serif">Irvine, CA</p>
+										<p class="serif"><a href="#" class="button button-small">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-item">
+                            <div class="portfolio-image">
+<!--                                 <img src="images/site-images/68.jpg" alt=""> -->
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-desc heading-block center">
+                                        <h3 class="serif">$2,800 / Month</h3>
+										<span class="serif">2 Bed, 2 Bath, 2,000 sq ft</span>
+										<p class="serif">Irvine, CA</p>
+										<p class="serif"><a href="#" class="button button-small">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-item">
+                            <div class="portfolio-image">
+<!--                                 <img src="images/site-images/17.jpg" alt=""> -->
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-desc heading-block center">
+                                        <h3 class="serif">$2,800 / Month</h3>
+										<span class="serif">2 Bed, 2 Bath, 2,000 sq ft</span>
+										<p class="serif">Irvine, CA</p>
+										<p class="serif"><a href="#" class="button button-small">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div><!-- #portfolio end -->
+
+                    <!-- Portfolio Script
+                    ============================================= -->
+                    <script type="text/javascript">
+
+                        jQuery(window).load(function(){
+
+                            var $container = $('#portfolio');
+
+                            $container.isotope({ transitionDuration: '0.65s' });
+
+                            $('#portfolio-filter a').click(function(){
+                                $('#portfolio-filter li').removeClass('activeFilter');
+                                $(this).parent('li').addClass('activeFilter');
+                                var selector = $(this).attr('data-filter');
+                                $container.isotope({ filter: selector });
+                                return false;
+                            });
+
+                            $('#portfolio-shuffle').click(function(){
+                                $container.isotope('updateSortData').isotope({
+                                    sortBy: 'random'
+                                });
+                            });
+
+                            $(window).resize(function() {
+                                $container.isotope('layout');
+                            });
+
+                        });
+
+                    </script><!-- Portfolio Script End -->
+              		</div>                   
+  	  	  	  </div>
+              <div class="fslider" style="min-height:0px"><div class="flexslider"></div></div>
+           
+		  	<div class="section parallax mobile-parallax notopmargin nobottommargin notopborder fullscreen-image dark-overlay dark" style="background-image: url('images/site-images/85.jpg'); padding: 320px 0;" data-stellar-background-ratio="0.2">            
+                    <div class="container vertical-middle center clearfix">
+                                                           
+                    	<h1 class="skinny">WHY VINE REALTORS?</h1>
+                        <h3 class="skinny">Discover Your Perfect Home</h3>
+                        <div class="one-page-menu xxlarge-font"><a href="#" data-href="#goto"><i class="icon-chevron-sign-down"></i></a></div>                        
+                        
+              		</div>                           
+       	  	  	</div>
+
+
+
+
+              	<div class="section nobottommargin notopmargin bgcolor-white" id="goto">                                                          
+              		<div class="container center">
+                    
+                    <h2 class="skinny">New Listings</h2>
+                    <h4 class="bottommargin-sm skinny"><a href="#">View All 100 New Listings</a></h4>
+
+                    <div class="col_one_third">
+                        <div class="feature-box fbox-center fbox-effect clearfix">
+                            <h3 class="serif">Irvine<span class="subtitle">$1,225,999</span></h3>                           
+        					<div class="effect-4">
+                            	<figure>
+<!--                                 	<a href="room-single.html"><img src="images/site-images/30.jpg" alt=""></a> -->
+                        			<figcaption>
+                            			<h4 class="color serif normal">Single Family Residence</h4>
+                            			
+                                        	<ul class="serif">
+                                                <li>Bed/Bath: 4/3</li>
+                                                <li>Sq Feet: 2299</li>
+                                                <li>Year Built: 2011</li>
+                                        	</ul>
+                                        
+                                        <a href="#" class="button button-small button-reveal tright"><span>Inquire</span> <i class="icon-chevron-right"></i></a>                        			</figcaption>
+                    			</figure>
+                            </div>                                                       
+                        </div>
+                    </div> 
+                    
+                    <div class="col_one_third">
+                        <div class="feature-box fbox-center fbox-effect clearfix">
+                            <h3 class="serif">Irvine<span class="subtitle">$1,225,999</span></h3>                            
+        					<div class="effect-4">
+                                <figure>
+<!--                                 	<a href="room-single.html"><img src="images/site-images/37.jpg" alt=""></a> -->
+                        			<figcaption>
+                            			<h4 class="color serif normal">Single Family Residence</h4>
+                            			
+                                        	<ul class="serif">
+                                                <li>Bed/Bath: 4/3</li>
+                                                <li>Sq Feet: 2299</li>
+                                                <li>Year Built: 2011</li>
+                                        	</ul>
+                                        
+                                        <a href="#" class="button button-small button-reveal tright"><span>Inquire</span> <i class="icon-chevron-right"></i></a>                        			</figcaption>
+                    			</figure>
+                            </div>                                                       
+                        </div>
+                    </div>                                        
+                    
+                    <div class="col_one_third col_last">
+                        <div class="feature-box fbox-center fbox-effect clearfix">
+                            <h3 class="serif">Irvine<span class="subtitle">$1,225,999</span></h3>                            
+        					<div class="effect-4">
+                            	<figure>
+<!--                                 	<a href="room-single.html"><img src="images/site-images/77.jpg" alt=""></a> -->
+                        			<figcaption>
+                            			<h4 class="color serif normal">Single Family Residence</h4>
+                            			
+                                        	<ul class="serif">
+                                                <li>Bed/Bath: 4/3</li>
+                                                <li>Sq Feet: 2299</li>
+                                                <li>Year Built: 2011</li>
+                                        	</ul>
+                                        
+                                        <a href="#" class="button button-small button-reveal tright"><span>Inquire</span> <i class="icon-chevron-right"></i></a>                        			</figcaption>
+                    			</figure>
+                            </div>                                                       
+                        </div>
+                    </div>                            
+                    
+                    <a href="#" class="button button-medium button-reveal button-white tright"><span>View all 100 Listings</span> <i class="icon-chevron-right"></i></a>              		</div>                   
+  	  	  	  </div>
+
+
+
+
+
+
+
+
+              
+              
+              
+              
+				<div class="section notopmargin nobottommargin notoppadding nobottompadding bgcolor-black dark">                                   
+
+                    <div id="oc-team-list" class="owl-carousel team-carousel">                                        
+                        
+                        <div class="oc-item">
+                            <div class="team team-list clearfix">
+                                <div class="team-image"><img src="images/site-images/52.jpg" alt="" />
+                                	<div class="desc dark right">
+                                    	<div class="vertical-middle">
+                                			<h3 class="serif">Reliability</h3>
+                                    		<h5 class="serif">With You Every Step</h5>
+                                        	
+                                        		<ul class="serif color">
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Praesent sit amet eros</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Quisque non sodales risus</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Lacus erat quis</a></li>
+                                            		<li><a href="#"><i class="icon-chevron-right"></i> Nulla non lorem velit</a></li>
+                                        		</ul>
+                                        	
+                                        	<a href="#" class="button button-medium button-reveal button-black tright"><span>Get Pre-Approved</span> 
+                                            <i class="icon-chevron-right"></i></a>                                       
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                         
+						
+						<div class="oc-item">
+                            <div class="team team-list clearfix">
+                                <div class="team-image"><img src="images/site-images/51.jpg" alt="" />
+                                	<div class="desc dark right">
+                                    	<div class="vertical-middle">
+                                			<h3 class="serif">Why Our Realtors?</h3>
+                                    		<h5 class="serif">Track Record of Excellence</h5>
+                                        	
+                                        		<ul class="serif color">
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Praesent sit amet eros</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Quisque non sodales risus</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Lacus erat quis</a></li>
+                                            		<li><a href="#"><i class="icon-chevron-right"></i> Nulla non lorem velit</a></li>
+                                        		</ul>
+                                        	
+                                        	<a href="#" class="button button-medium button-reveal button-black tright"><span>Find an Agent</span> 
+                                            <i class="icon-chevron-right"></i></a>                                       
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                      
+                        
+                        <div class="oc-item">
+                            <div class="team team-list clearfix">
+                                <div class="team-image"><img src="images/site-images/53.jpg" alt="" />
+                                	<div class="desc dark right">
+                                    	<div class="vertical-middle">
+                                			<h3 class="serif">Quality</h3>
+                                    		<h5 class="serif">Most Experienced Realtors</h5>
+                                        	
+                                        		<ul class="serif color">
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Praesent sit amet eros</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Quisque non sodales risus</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Lacus erat quis</a></li>
+                                            		<li><a href="#"><i class="icon-chevron-right"></i> Nulla non lorem velit</a></li>
+                                        		</ul>
+                                        	
+                                        	<a href="#" class="button button-medium button-reveal button-black tright"><span>Find an Office</span> 
+                                            <i class="icon-chevron-right"></i></a>                                      
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                                                                               
+                        
+                        <div class="oc-item">
+                            <div class="team team-list clearfix">
+                                <div class="team-image"><img src="images/site-images/54.jpg" alt="" />
+                                	<div class="desc dark right">
+                                    	<div class="vertical-middle">
+                                			<h3 class="serif">Track Record</h3>
+                                    		<h5 class="serif">Best in the Business</h5>
+                                        	
+                                        		<ul class="serif color">
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Praesent sit amet eros</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Quisque non sodales risus</a></li>
+                                        			<li><a href="#"><i class="icon-chevron-right"></i> Lacus erat quis</a></li>
+                                            		<li><a href="#"><i class="icon-chevron-right"></i> Nulla non lorem velit</a></li>
+                                        		</ul>
+                                        	
+                                        	<h4 class="serif">(800) 444 1222</h4>                                       
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                                                                                
+                        
+                    </div>
+                    
+                  <script type="text/javascript">
+
+                        jQuery(document).ready(function($) {
+
+                            var ocTeam = $("#oc-team-list");
+
+                            ocTeam.owlCarousel({
+                                responsive:{
+                                    0:{ items:1 },
+                                    600:{ items:1 },
+                                    1000:{ items:1 }
+                                },
+                                margin: 30,
+                                nav: false,
+                                dots:true,
+								mouseDrag:false,
+								touchDrag:false,
+								pullDrag:false,
+								freeDrag:false,
+								smartSpeed:1500,
+								loop:true,
+								navRewind:true,
+								autoplay:false
+                            });
+
+                        });
+
+                    </script> 
+                 
+              	</div>               
+              
+              
+         
+                
+
+
+
+
+
+              	<div class="section nobottommargin notopmargin toppadding-md bottompadding-md bgcolor-white">                                                          
+              		<div class="container center">                  
+                        
+                        <h3 class="serif">Find Your Local Neighborhood</h3>
+                        <p>Does it have pet friendly rentals? What are the crime rates? Get important local information on the area you're most interested in</p>
+                    	<a href="#" class="button button-medium button-reveal button-border tright"><span>Go Search</span> <i class="icon-search"></i></a>
+                        
+                    </div>                   
+  	  	      	</div>
+
+
+
+
+
+
+
+                
+                
+                
+			  <div class="section parallax mobile-parallax notopmargin nobottommargin notopborder fullscreen-image dark-overlay" style="background-image: url('images/site-images/35.jpg'); 
+              padding: 320px 0;" data-stellar-background-ratio="0.2">            
+                    <div class="container vertical-middle center clearfix">
+                                                           
+                    	<a href="#" class="button button-massive button-border button-dark button-outline tright nomargin skinny">
+                    	<span>LOCAL MORTGAGE LENDERS</span><span class="subtext skinny">Connect with lenders, get today's mortgage rates</span></a>                       
+                        
+              		</div>                           
+       	  	  </div>
+
+		<div class="section notopmargin nobottommargin notopborder toppadding-xlg bgcolor-grey-dark dark">
+        	<div class="container">
+            <div class="boxedcontainer mini-links dark">
+                
+        	<div class="col_one_fourth bottommargin-xsm">
+            	<h6><a href="#">New Construction</a></h6>
+            </div>
+            
+            <div class="col_one_fourth bottommargin-xsm">
+            	<h6><a href="#">New Homes By City</a></h6>
+                <ul>
+                <li><a href="#">Irvine, CA</a></li>
+                <li><a href="#">Newport Beach, CA</a></li>
+                <li><a href="#">Laguna Niguel, CA</a></li>
+                </ul>
+            </div>
+            
+        	<div class="col_one_fourth bottommargin-xsm">
+            	<h6><a href="#">New Homes Builders</a></h6>
+                <ul>
+                <li><a href="#">KB Construction</a></li>
+                <li><a href="#">Tarbell Homes</a></li>
+                <li><a href="#">Pelber Homes</a></li>
+                </ul>
+            </div>
+            
+        	<div class="col_one_fourth col_last bottommargin-xsm">
+            	<h6><a href="#">Discover Benefits</a></h6>
+                <ul>
+                <li><a href="#">Membership Benefits</a></li>
+                <li><a href="#">Program News</a></li>
+                <li><a href="#">Frequently Asked Questions</a></li>
+                <li><a href="#">Vine Rewards Offers</a></li>
+                </ul>
+            </div>
+            
+            <div class="divider"></div>
+            
+        	<div class="col_one_fourth">
+            	<h6><a href="#">Customer Support</a></h6>
+            </div>
+            
+            <div class="col_one_fourth">
+            	<h6><a href="#">Terms &amp; Conditions</a></h6>
+                <ul>
+                <li><a href="#">Gold Membership</a></li>
+                <li><a href="#">Silver Membership</a></li>
+                <li><a href="#">Escrow</a></li>
+                </ul>
+            </div>
+            
+        	<div class="col_one_fourth">
+            	<h6><a href="#">My Account</a></h6>
+                <ul>
+                <li><a href="#">Upcoming Open House</a></li>
+                <li><a href="#">Account Activity</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Rewards Tracker</a></li>
+                </ul>
+            </div>
+            
+        	<div class="col_one_fourth col_last">
+            	<h6><a href="#">Vine Rewards</a></h6>
+                <ul>
+                <li><a href="#">Getting Started</a></li>
+                <li><a href="#">Realty Forums</a></li>
+                </ul>
+            </div>                                    
+        	</div>
+            </div>
+        </div>
+
+
+
+        
+          </div>
+        </section><!-- #content end -->          
+        
+</ui:composition>

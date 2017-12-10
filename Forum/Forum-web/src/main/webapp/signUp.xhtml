@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="title">Registration</ui:define>
+	<ui:define name="content">sign up 
+	<h:form>
+			<p:panel header="Subscription in FORUM">
+				<h:panelGrid columns="2">
+
+					<p:outputLabel value="FirstName:*" />
+					<p:inputText id="i1" value="#{userManagementBean.user.firstName}"
+						required="true" requiredMessage="emmm ti yezzi">
+
+					</p:inputText>
+					<p:outputLabel value="LastName:*" />
+					<p:inputText id="i2" value="#{userManagementBean.user.lastName}"
+						required="true" requiredMessage="emmm ti yezzi">
+
+					</p:inputText>
+					<p:outputLabel value="Email:*" />
+					<p:inputText id="i3" value="#{userManagementBean.user.email}"
+						required="true" requiredMessage="emmm ti yezzi"
+						validatorMessage="Invalid email format">
+			<f:validateRegex
+								pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"></f:validateRegex>
+						<f:ajax event="blur" execute="@this" render="m_mail"></f:ajax>
+					</p:inputText>
+					<p:outputLabel value="Username:*" />
+					<p:inputText id="i4" value="#{userManagementBean.user.username}"
+						required="true" />
+					<p:outputLabel value="Password:*" />
+					<p:password id="feedback"
+						value="#{userManagementBean.user.password}" required="true"
+						feedback="true" />
+					<p:outputLabel value="Confirm Password:*" />
+					<p:password id="feedback1"
+						value="#{userManagementBean.user.password}" required="true"
+						feedback="true" />
+					 <p:outputLabel for="effect" value="DateOfBirdhday:" />
+        <p:calendar id="effect" value="#{userManagementBean.user.dateOfBirth}" effect="fold" 
+        pattern="MM-dd-yyyy HH:mm:ss" mindate="01-01-2005 00:00:00" required="true"/>	
+        	<div class="form-actions">
+					<p:commandButton value="Register"
+						action="#{userManagementBean.doAddUser()}" />
+						</div>
+				</h:panelGrid>
+			</p:panel>
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>

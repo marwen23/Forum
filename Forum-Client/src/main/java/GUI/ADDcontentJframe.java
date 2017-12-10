@@ -62,7 +62,7 @@ public class ADDcontentJframe extends JFrame {
 		contentPane.add(label);
 		
 		titlelb = new JTextField();
-		titlelb.setBounds(84, 12, 86, 20);
+		titlelb.setBounds(104, 12, 86, 20);
 		titlelb.setColumns(10);
 		contentPane.add(titlelb);
 		
@@ -76,11 +76,11 @@ public class ADDcontentJframe extends JFrame {
 		contentPane.add(comboBoxCat);
 		
 		JLabel label_2 = new JLabel("Description");
-		label_2.setBounds(10, 210, 59, 14);
+		label_2.setBounds(10, 210, 76, 14);
 		contentPane.add(label_2);
 		
 		JTextArea descriptionlb = new JTextArea();
-		descriptionlb.setBounds(84, 195, 165, 56);
+		descriptionlb.setBounds(104, 195, 165, 56);
 		contentPane.add(descriptionlb);
 		
 		JLabel label_3 = new JLabel("Trailer");
@@ -88,27 +88,27 @@ public class ADDcontentJframe extends JFrame {
 		contentPane.add(label_3);
 		
 		trailerlb = new JTextField();
-		trailerlb.setBounds(86, 91, 163, 20);
+		trailerlb.setBounds(101, 91, 215, 20);
 		trailerlb.setColumns(10);
 		contentPane.add(trailerlb);
 		
 		JYearChooser yearChooser = new JYearChooser();
-		yearChooser.getSpinner().setBounds(0, 0, 46, 20);
-		yearChooser.setBounds(84, 133, 46, 20);
+		yearChooser.getSpinner().setBounds(0, 0, 59, 20);
+		yearChooser.setBounds(104, 133, 59, 20);
 		contentPane.add(yearChooser);
 		yearChooser.setLayout(null);
 		
 		JLabel label_4 = new JLabel("Release Year");
-		label_4.setBounds(10, 139, 63, 14);
+		label_4.setBounds(10, 139, 84, 14);
 		contentPane.add(label_4);
 		
 		JLabel label_5 = new JLabel("Rating");
-		label_5.setBounds(10, 167, 46, 14);
+		label_5.setBounds(10, 167, 64, 14);
 		contentPane.add(label_5);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(new Double(0), new Double(0), null, new Double(1)));
-		spinner.setBounds(84, 164, 56, 20);
+		spinner.setBounds(104, 164, 56, 20);
 		contentPane.add(spinner);
 		
 		JLabel label_6 = new JLabel("Category");
@@ -145,16 +145,16 @@ public class ADDcontentJframe extends JFrame {
 				
 			}
 		});
-		button.setBounds(311, 117, 89, 59);
+		button.setBounds(308, 188, 89, 59);
 		contentPane.add(button);
 		comboBoxGenre.setModel(new DefaultComboBoxModel(Genre.values()));
 		
 		
-		comboBoxGenre.setBounds(84, 46, 86, 20);
+		comboBoxGenre.setBounds(104, 45, 86, 20);
 		contentPane.add(comboBoxGenre);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Marwen\\Desktop\\Fantasy-Sky-Step2.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Marwen\\Desktop\\FMS JEE\\FMS\\add.jpg"));
 		lblNewLabel.setBounds(0, 0, 434, 261);
 		contentPane.add(lblNewLabel);
 	}

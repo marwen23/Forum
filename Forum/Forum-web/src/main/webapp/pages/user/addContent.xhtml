@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="/WEB-INF/template/template.xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui" >
+	
+	<ui:define name="title">welcome</ui:define>
+	<ui:define name="content">
+	
+	<h:form id="form" enctype="multipart/form-data">
+    
+     <p:panel id="panel" header="Form" style="margin-bottom:10px;">
+        <p:messages id="messages"  autoUpdate="true"/>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="title" value="Title:" />
+            <p:inputText id="title" value="#{contentManagement.contentToAdd.title}" required="true" />
+            
+            <p:outputLabel for="genre" value="genre" />
+        <p:selectOneListbox id="genre" value="#{contentManagement.contentToAdd.genre}">
+            <f:selectItem itemLabel="ACTION" itemValue="ACTION" />
+            <f:selectItem itemLabel="ADVENTURE" itemValue="ADVENTURE" />
+            <f:selectItem itemLabel="ANIMATION" itemValue="ANIMATION" />
+        </p:selectOneListbox>
+ 
+            <p:outputLabel for="trailer" value="Trailer:" />
+            <p:inputText id="trailer" required="false" value="#{contentManagement.contentToAdd.trailer}" />
+ 
+            <h:outputLabel for="year" value="Release Year: " />
+             
+        <p:spinner min="1950" max="2018" id="year" required="true" value="#{contentManagement.contentToAdd.yearReleased}" >
+        </p:spinner>
+        
+         <h:outputLabel for="rating" value="Release Year: " />
+        <p:spinner id="rating" value="#{contentManagement.contentToAdd.rating}" stepFactor="0.5" />
+        <h3>Description</h3>
+        <p:inputTextarea rows="6" cols="33" required="false" value="#{contentManagement.contentToAdd.description}" />
+
+    
+     <p:outputLabel for="category" value="Category:" />
+        <p:selectOneListbox id="category" value="#{contentManagement.contentToAdd.category}">
+            <f:selectItem itemLabel="MOVIES" itemValue="MOVIES" />
+            <f:selectItem itemLabel="TV" itemValue="TV" />
+            <f:selectItem itemLabel="GAMES" itemValue="GAMES" />
+            <f:selectItem itemLabel="MUSIC" itemValue="MUSIC" />
+           
+        </p:selectOneListbox>
+        
+        
+       
+<p:fileUpload mode="simple" value="#{contentManagement.file}" /> 
+
+        
+        
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:commandButton validateClient="true" ajax="false" action="#{contentManagement.doAddContent()}" value="Submit" update="panel"  />
+  
+    </h:form>
+	</ui:define>
+
+
+</ui:composition>

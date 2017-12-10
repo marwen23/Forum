@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http:/xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:pt="http:/xmlns.jcp.org/jsf/passthrought"
+	xmlns:f="http:/xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+
+<h:head>
+
+	<title><ui:insert name="pageTitle">
+	
+	sdfsdfdsfdsfsdffsdfsfsdfs
+	
+	</ui:insert></title>
+
+	<!-- Stylesheets
+    ============================================= -->
+<f:facet name="last">
+
+	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="dark.html"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="font-icons.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="animate.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="magnific-popup.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="responsive.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+</f:facet>	
+
+	<!--  External javascript  -->
+	
+	<h:outputScript library="js" name="plugins.js"></h:outputScript>
+
+</h:head>
+
+<h:body class="stretched">
+
+	<!-- Document Wrapper
+    ============================================= -->
+	<div id="wrapper" class="clearfix">
+
+
+		
+
+
+		<!-- Header
+        ============================================= -->
+
+		<div id="header" class="transparent-header semi-transparent">
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+	
+					<ui:include src="/Front_template/header.xhtml" />
+					<!-- Primary Navigation
+                    ============================================= -->
+
+					<ui:include src="/Front_template/PrimaryNavigation.xhtml" />
+
+				</div>
+
+			</div>
+		</div>
+		<!-- #header end -->
+		
+
+		<!-- Content
+        ============================================= -->
+		<section id="content">
+		<div class="content-wrap bgcolor-black notoppadding nobottompadding">
+			<div
+				class="section nobottommargin notopmargin bottompadding-lg bgcolor-grey-dark dark">
+				<div class="container toppadding-sm center">
+					
+				
+					
+					<ui:insert  name="pageContent">
+						<ui:include src="/Front_template/Body.xhtml" />
+					</ui:insert>
+					
+					 
+				
+				</div>
+			</div>
+		</div>
+		</section>
+
+
+
+		<!-- Footer
+        ============================================= -->
+
+
+		<ui:include src="/Front_template/Footer.xhtml" />
+
+
+	</div>
+	<!-- Footer Scripts -->
+	<h:outputScript library="js" name="functions.js"></h:outputScript>
+	<h:outputScript library="js" name="modernizr.js"></h:outputScript>
+
+
+
+</h:body>
+</html>

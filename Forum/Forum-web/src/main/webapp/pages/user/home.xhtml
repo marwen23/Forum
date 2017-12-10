@@ -1,0 +1,75 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="/Front_template/Template.xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+    
+	 >
+	
+	<ui:define name="pageTitle">Contents</ui:define>
+	
+	
+	<ui:define name="pageContent">
+		<h:form id="form">
+		
+ 
+
+    <p:dataGrid var="content" value="#{grid.contents}" columns="3" layout="grid"
+        rows="12" paginator="true" id="contents"
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+        rowsPerPageTemplate="6,12,16">
+ 
+        <f:facet name="header">
+     <p:inputText id="title"  value="#{search.searchKeyword}" placeholder="Search..." />
+		<p:commandButton  action="#{search.SearchMovie()}" value="Search" icon="ui-icon-search"/>
+
+        </f:facet>
+ 
+        <p:panel header="#{content.title}" style="text-align:center">
+            <h:panelGrid columns="1" style="width:100%">
+                <p:graphicImage  style="width:100px;
+	height:130px;" name="/img/#{content.image}"/> 
+ 
+                <h:outputText value="#{content.yearReleased}" />
+ 
+<p:commandButton  action="#{contentManagement.goToSingleContetnt(content)}" value="Go" icon="ui-icon-star">
+    
+</p:commandButton>
+ 
+                <p:commandLink update=":form:contentDetail" oncomplete="PF('contentDialog').show()" title="View Detail">
+                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                    <f:setPropertyActionListener value="#{content}" target="#{grid.selectedContent}" />
+                </p:commandLink>
+            </h:panelGrid>
+        </p:panel>
+ 
+    </p:dataGrid>
+ 
+    <p:dialog header="Content Info" widgetVar="contentDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="contentDetail" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty grid.selectedContent}" columnClasses="label,value">
+<!--                 <f:facet name="header"> -->
+<!--                     <p:graphicImage name="demo/images/car/#{dataGridView.selectedCar.brand}-big.gif"/>  -->
+<!--                 </f:facet> -->
+ 
+                <h:outputText value="Id:" />
+                <h:outputText value="#{grid.selectedContent.id}" />
+  				
+  				<h:outputText value="Title" />
+                <h:outputText value="$#{grid.selectedContent.title}" />
+               
+                <h:outputText value="Year" />
+                <h:outputText value="#{grid.selectedContent.yearReleased}" />
+ 
+               
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+</h:form>
+	</ui:define>
+
+
+</ui:composition>

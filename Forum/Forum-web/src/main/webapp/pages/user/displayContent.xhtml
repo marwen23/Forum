@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="/WEB-INF/template/template.xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	 >
+	<ui:define name="title">welcome</ui:define>
+	<ui:define name="content">
+	
+	
+	              <h:form>
+    <p:growl id="msgs" showDetail="true" />
+ 
+  
+    <p:panel id="horizontal" header="#{contentManagement.singleContent.title}" toggleable="true" toggleOrientation="horizontal">
+        <h:panelGrid columns="2" cellpadding="10">
+           
+             <p:graphicImage  style="width:100px;
+	height:130px;" name="/img/#{contentManagement.singleContent.image}"/>
+           <p:media value="#{contentManagement.singleContent.trailer}&amp;hl=en&amp;fs=1&amp;" width="600" height="300" player="flash"/>
+            <h:outputText
+                value="Description: #{contentManagement.singleContent.description}" />
+                
+                <h:outputText
+                value="Rating: #{contentManagement.singleContent.rating}" />
+                
+                  <h:outputText
+                value="Release Year: #{contentManagement.singleContent.yearReleased}" />
+                
+                 <h:outputText
+                value="Genre: #{contentManagement.singleContent.genre}" />
+                
+                
+                
+                
+         
+  <p:commandButton  action="#{contentManagement.goToEditContent(contentManagement.singleContent)}" value="Add To Favorites" icon="ui-icon-heart"/>               
+  <p:spinner id="rating" value="#{contentManagement.contentToAdd.rating}" stepFactor="0.5" />
+    <p:commandButton  action="#{contentManagement.goToEditContent(contentManagement.singleContent)}" value="Download Content" icon="ui-icon-heart"/>               
+  
+    <p:commandButton  action="#{contentManagement.goToEditContent(contentManagement.singleContent)}" value="Watch Online" icon="ui-icon-heart"/>               
+  
+               
+                
+        </h:panelGrid>
+    </p:panel>
+</h:form>
+	
+	
+	</ui:define>
+
+
+</ui:composition>

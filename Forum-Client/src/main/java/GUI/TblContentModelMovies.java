@@ -21,6 +21,7 @@ class TblContentModelMovies extends AbstractTableModel {
     private static final int COL_ID = 0;
     private static final int COL_TITLE = 1;
 Category category = Category.MOVIES;
+
      List<Content> contents=ContentServicesDelegate.findContentByCategory(category);  //list that is injected via constructor or setter method
 
     public int getRowCount() {

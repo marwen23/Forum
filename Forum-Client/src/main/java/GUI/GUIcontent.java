@@ -46,7 +46,6 @@ public class GUIcontent extends JFrame {
 	JComboBox comboBox_1 = new JComboBox();
 	JSpinner spinner = new JSpinner();
 	JSpinner spinner_1 = new JSpinner();
-	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -113,6 +112,10 @@ public class GUIcontent extends JFrame {
 		table.setShowHorizontalLines(true);
 		table.setFillsViewportHeight(true);
 		table.setAutoCreateRowSorter(true);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		scrollPane.setColumnHeaderView(lblNewLabel);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Marwen\\Desktop\\all conentent.jpg"));
 		
 		
 		
@@ -269,20 +272,6 @@ public class GUIcontent extends JFrame {
 		lblManageAllContents.setFont(new Font("Tw Cen MT", Font.BOLD, 17));
 		lblManageAllContents.setBounds(269, 31, 198, 14);
 		contentPane.add(lblManageAllContents);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Marwen\\Desktop\\all conentent.jpg"));
-		lblNewLabel.setBounds(0, 0, 755, 388);
-		contentPane.add(lblNewLabel);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(117, 11, 110, 28);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(57, 18, 46, 14);
-		contentPane.add(lblNewLabel_1);
 	
 	
 	

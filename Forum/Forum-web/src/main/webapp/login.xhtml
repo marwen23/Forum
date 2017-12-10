@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrought"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Authentication</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<h:outputStylesheet library="css" name="default.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="fonts.css"></h:outputStylesheet>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</h:head>
+<h:body>
+
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">ESPRIT 2016-2017</a></h1>
+			<h2>Created by 4InfoB1  EX Machina</h2>
+		</div>
+		
+	</div>
+	<br/>
+	<br/>
+		<div id="banner" class="container">
+		<h:form class="login_form">
+		 <header>Login</header>
+  <label>Username <span>*</span></label>
+  <h:inputText value="#{identity.user.username}"  id="txt_login"/>
+  <div class="help">At least 6 character</div>
+  <label>Password <span>*</span></label>
+  <h:inputSecret value="#{identity.user.password}" id="txt_password"/>
+  <h:message for="txt_password"/>
+  <div class="help">Use upper and lowercase lettes as well</div>
+<!-- 		<h:panelGrid columns="2" > -->
+<!-- 		<tr></tr> -->
+<!-- 				<h:outputText value="username" /> -->
+<!-- 				<p:inputText value="#{identity.user.username}" class="form-control" p:placeholder="Username" -->
+<!-- 					data-rule-required="true" -->
+<!-- 					data-msg-required="Please enter your username" > -->
+					
+               
+<!-- 					</p:inputText> -->
+<!-- 					<div class="help">At least 6 character</div> -->
+<!-- 					<div> -->
+<!-- 					<br></br> -->
+<!-- 				<h:outputText value="password" /> -->
+<!-- 				<p:password value="#{identity.user.password}" class="form-control" p:placeholder="Password" -->
+<!-- 					data-rule-required="true" -->
+<!-- 					data-msg-required="Please enter your password" > -->
+					
+                
+<!-- 					</p:password> -->
+<!-- 					</div> -->
+<!-- 					<div class="help">Use upper and lowercase lettes as well</div> -->
+				<div class="checkbox check-transparent">
+				 <label for="remember">Remember me <span> *</span></label>
+                  <input type="checkbox" value="1" id="remember" checked="checked"/>
+                 
+                </div>
+					<div class="loginButton">
+				<p:commandButton  style="color: blue;" value="login" icon="ui-icon-check" update="logPanelGrid,messages" action="#{identity.doLogin()}"  ajax="false"/>
+		<br/><br/>
+		
+		
+		
+		<h:commandLink action="signUp" value="New user?,register"  href="/signUp.jsf"/>
+<!-- 		<p:commandButton  style="color: blue;" id="messages" action="signUp" immediate="true" icon="ui-icon-plus" value="signUp" /> -->
+			</div>
+<!-- 	</h:panelGrid>  -->
+<!-- Forgot Password Form -->
+		<div class="inner-box">
+			<div class="content">
+				<!-- Close Button -->
+				<i class="icon-remove close hide-default"></i>
+
+	
+				<!-- Forgot Password Formular -->
+				<h:form class="form-vertical forgot-password-form hide-default"
+					action="login.xhtml" method="post">
+					<!-- Input Fields -->
+					<div class="form-group">
+						<!--<label for="email">Email:</label>-->
+						<div class="input-icon">
+							<i class="icon-envelope"></i>
+							<h:inputText value="#{identity.user.email}" name="email"
+								class="form-control" p:placeholder="Enter email address"
+								data-rule-required="true" data-rule-email="true"
+								data-msg-required="Please enter your email." />
+
+						</div>
+					</div>
+					<!-- /Input Fields -->
+					<h:commandButton action="#{identity.sendPwd()}"
+						value="Reset your Password"
+						class="submit btn btn-default btn-block" />
+
+				</h:form>
+				<!-- /Forgot Password Formular -->
+
+				<!-- Shows up if reset-button was clicked -->
+<!-- 				<div class="forgot-password-done hide-default"> -->
+<!-- 					<i class="icon-ok success-icon"></i> -->
+<!-- 					Error-Alternative: <i class="icon-remove danger-icon"></i> -->
+<!-- 					<span>Great. We have sent you an email.</span> -->
+<!-- 				</div> -->
+			</div>
+			<!-- /.content -->
+		</div>
+		<!-- /Forgot Password Form -->
+
+</h:form>
+<div style="color: blue;"><h:messages showDetail="true"/></div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<div id="three-column" class="container">
+		<div class="title">
+			<h2>The different users of this application</h2>
+			<span class="byline">There are Two main users: the client and the moderator</span>
+		</div>
+		
+		<div class="boxA">
+			<p style="font-weight:bold">Client user</p>
+			
+		</div>
+		
+		<div class="boxB">
+		<p style="font-weight:bold"> moderator</p>
+		
+	
+		</div>
+		
+		
+		
+	</div>
+</div>
+
+
+</h:body>
+</html>

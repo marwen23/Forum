@@ -35,7 +35,7 @@ public class GUIcontentMovies extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	public JTextField textField_1;
 	private JTextField textField_2;
 	private JTable table;
 	JComboBox comboBox = new JComboBox();
@@ -69,6 +69,18 @@ public class GUIcontentMovies extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Upload Trailer");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				new UploadVideoGUI().setVisible(true);
+				
+			 
+			}
+		});
+		btnNewButton.setBounds(237, 252, 115, 23);
+		contentPane.add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(75, 35, 612, 160);
@@ -111,7 +123,7 @@ public class GUIcontentMovies extends JFrame {
 		
 		JLabel label = new JLabel("Title");
 		label.setFont(new Font("Tahoma", Font.BOLD, 13));
-		label.setBounds(57, 240, 46, 14);
+		label.setBounds(39, 206, 46, 14);
 		contentPane.add(label);
 		
 		textField = new JTextField();
@@ -122,27 +134,27 @@ public class GUIcontentMovies extends JFrame {
 			}
 		});
 		textField.setColumns(10);
-		textField.setBounds(117, 238, 86, 20);
+		textField.setBounds(85, 206, 86, 20);
 		contentPane.add(textField);
 		
 		JLabel label_1 = new JLabel("Genre");
 		label_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		label_1.setBounds(57, 268, 46, 14);
+		label_1.setBounds(190, 208, 46, 14);
 		contentPane.add(label_1);
 		comboBox.setModel(new DefaultComboBoxModel(Genre.values()));
 		
 		
-		comboBox.setBounds(117, 265, 86, 20);
+		comboBox.setBounds(237, 206, 86, 20);
 		contentPane.add(comboBox);
 		
 		JLabel label_2 = new JLabel("Trailer");
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		label_2.setBounds(57, 296, 46, 14);
+		label_2.setBounds(39, 255, 46, 14);
 		contentPane.add(label_2);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(117, 293, 164, 20);
+		textField_1.setBounds(82, 253, 154, 20);
 		contentPane.add(textField_1);
 		
 		JLabel label_3 = new JLabel("Description");
@@ -152,37 +164,37 @@ public class GUIcontentMovies extends JFrame {
 		
 		JLabel label_4 = new JLabel("Rating");
 		label_4.setFont(new Font("Tahoma", Font.BOLD, 13));
-		label_4.setBounds(307, 240, 46, 14);
+		label_4.setBounds(406, 255, 46, 14);
 		contentPane.add(label_4);
 		comboBox_1.setModel(new DefaultComboBoxModel(Category.values()));
 		
 		
-		comboBox_1.setBounds(397, 266, 78, 20);
+		comboBox_1.setBounds(512, 281, 78, 20);
 		contentPane.add(comboBox_1);
 		
 		JLabel label_5 = new JLabel("Category");
 		label_5.setFont(new Font("Tahoma", Font.BOLD, 13));
-		label_5.setBounds(307, 268, 62, 14);
+		label_5.setBounds(406, 283, 62, 14);
 		contentPane.add(label_5);
 		
 		JLabel label_6 = new JLabel("Release Year");
 		label_6.setFont(new Font("Tahoma", Font.BOLD, 13));
-		label_6.setBounds(291, 299, 96, 14);
+		label_6.setBounds(406, 314, 96, 14);
 		contentPane.add(label_6);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(117, 330, 154, 52);
+		textField_2.setBounds(117, 330, 235, 52);
 		contentPane.add(textField_2);
 		spinner.setModel(new SpinnerNumberModel(2017, null, 2017, 1));
 		
 		
-		spinner.setBounds(397, 296, 69, 20);
+		spinner.setBounds(512, 311, 69, 20);
 		contentPane.add(spinner);
 		spinner_1.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		
 		
-		spinner_1.setBounds(397, 238, 59, 20);
+		spinner_1.setBounds(512, 253, 59, 20);
 		contentPane.add(spinner_1);
 		
 		JButton button = new JButton("ADD");
@@ -193,7 +205,7 @@ public class GUIcontentMovies extends JFrame {
 				
 			}
 		});
-		button.setBounds(525, 206, 110, 42);
+		button.setBounds(619, 212, 110, 42);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("DELETE");
@@ -212,7 +224,7 @@ public class GUIcontentMovies extends JFrame {
 				  JOptionPane.showMessageDialog(null ,"Deleted successfully");
 			}
 		});
-		button_1.setBounds(525, 268, 110, 42);
+		button_1.setBounds(619, 274, 110, 42);
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("UPDATE");
@@ -231,8 +243,8 @@ public class GUIcontentMovies extends JFrame {
 				String tit = textField.getText();
 				Genre genre = (Genre) comboBox.getSelectedItem();
 				//content.setGenre(genre);
-				String description=textField_1.getText();
-				String trailer= textField_2.getText();
+				String description=textField_2.getText();
+				String trailer= textField_1.getText();
 				int   yearReleased=(int) spinner.getValue();
 			
 				Double rating =2.0;
@@ -250,7 +262,7 @@ public class GUIcontentMovies extends JFrame {
 				
 			}
 		});
-		button_2.setBounds(525, 336, 110, 40);
+		button_2.setBounds(619, 342, 110, 40);
 		contentPane.add(button_2);
 		
 		JLabel lblSortBy = new JLabel("Sort by==>");
@@ -259,11 +271,20 @@ public class GUIcontentMovies extends JFrame {
 		
 		JLabel lblManageMovies = new JLabel("MANAGE MOVIES");
 		lblManageMovies.setFont(new Font("Tw Cen MT", Font.BOLD, 17));
-		lblManageMovies.setBounds(285, 11, 176, 20);
+		lblManageMovies.setBounds(312, 11, 176, 20);
 		contentPane.add(lblManageMovies);
 		
+		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new SearchVideo().setVisible(true);
+			}
+		});
+		btnSearch.setBounds(82, 280, 154, 23);
+		contentPane.add(btnSearch);
+		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Marwen\\Desktop\\movies (2).jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Marwen\\Desktop\\FMS JEE\\FMS\\all conentent.jpg"));
 		lblNewLabel.setBounds(0, 0, 755, 388);
 		contentPane.add(lblNewLabel);
 	

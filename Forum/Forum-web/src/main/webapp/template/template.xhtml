@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrought"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+      
+      
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+input[type=radio]{
+  margin-right: 1px;
+  margin-bottom: 20px;
+}
+label {
+   color:#B32C0E;
+	font-weight:bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+    background-color: #ffffff;
+    width: 600px;
+   
+    border: 2px solid #eeab69;
+ 
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url(border-radius.htc);
+ 
+    background-image: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f4f4f4));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#f4f4f4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#f4f4f4)";
+}
+ 
+legend {
+    color: #eeab69;
+    margin:0 auto;
+    font-size:18px;
+}
+</style>
+
+<title><ui:insert name="pageTitle"></ui:insert>
+</title>
+<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+<script type="text/javascript">
+var websocket=new Array() ;
+websocket= new WebSocket("ws://localhost:18080/mooc2-web/ChatRoomServerEndpoint/?course=java")
+websocket.onmessage=function processMessage(message){
+var jsonData=JSON.parse(message.data);
+if(jsonData.message!=null) messagesTextArea.value +=jsonData.message +"\n";	
+}
+function sendMessage(){
+	if (lolMessage.value=="x") {
+	websocket.send(messageText.value);
+	messageText.value="";}
+}
+
+function Connect(){
+	if (lolMessage.value=="lol") {
+		websocket.send(messageConnect.value);
+	messageConnect.value="";
+	lolMessage.value="x";
+	}
+
+	function Room(){
+		
+		}
+	
+}
+
+</script>
+</h:head>
+
+<h:body>
+<div id="wrap">
+<div id="topbar">
+<ui:insert name="pageHeader"></ui:insert>
+<ui:insert name="menuHeader"></ui:insert>
+  
+ 
+</div>
+
+<div id="header">
+</div>
+<div id="content">
+<div id="mainpage">
+<!-- <ui:include src="/template/mainPage.xhtml"/> -->
+<ui:insert name="pageContent"></ui:insert>
+</div>
+
+<div id="sidebar">
+
+</div>
+<div id="sidebarcontents"> 
+<!-- <ui:include src="/template/sideBarMenu.xhtml"/> -->
+<ui:insert name="sideBarMenu"></ui:insert>
+
+</div>
+
+  <div id="sidebarbottom"></div>
+</div>
+<div class="clear"></div>
+</div>
+
+<ui:insert name="footerPage"></ui:insert>
+
+</h:body> 
+</html>
